@@ -1,0 +1,18 @@
+const mongoose = require("mongoose");
+const connection_uri =
+  "mongodb+srv://user_auth:user_auth@cluster0.krtpjap.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+
+const connection = mongoose.createConnection(connection_uri, {
+  useNewUrlParser: true, //This part helps in understanding the connection details you provide for the MongoDB database
+  useUnifiedTopology: true, //This part is about how your application talks to the MongoDB server.
+});
+
+connection.on("error", (error) => {
+  console.log("Error in database", error);
+});
+
+connection.once("open", () => {
+  console.log("Connected to Database");
+});
+
+exports.connection = connection;
