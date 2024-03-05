@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
-const connection_uri =
-  "mongodb+srv://user_auth:user_auth@cluster0.krtpjap.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const connection_uri = process.env.MONGO_URI;
 
 const connection = mongoose.createConnection(connection_uri, {
   useNewUrlParser: true, //This part helps in understanding the connection details you provide for the MongoDB database
