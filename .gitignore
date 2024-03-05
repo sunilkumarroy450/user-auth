@@ -1,0 +1,10 @@
+# .gitignore
+
+# Ignore node_modules directory
+node_modules/
+
+# Ignore environment variable file
+.env
+
+# Ignore npm lock file
+package-lock.json
